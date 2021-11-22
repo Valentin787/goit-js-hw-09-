@@ -13,18 +13,24 @@ const handlerStart = () => {
   timeId = setInterval(() => {
     formRef.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  formRef.btnStop.removeAttribute("disabled", false);
-  formRef.btnStart.setAttribute("disabled", true);
-  
-
-}
+  btnStartActive();
+};
 
 const handlerStop = () => {
   clearInterval(timeId);
+  btnStopActive();
+};
+
+const btnStopActive = () => {
   formRef.btnStart.removeAttribute("disabled", false);
   formRef.btnStop.setAttribute("disabled", true);
+};
 
-}
+const btnStartActive = () => {
+  formRef.btnStop.removeAttribute("disabled", false);
+  formRef.btnStart.setAttribute("disabled", true);
+};
+
 console.log(formRef.body)
 console.log(formRef.btnStart)
 console.log(formRef.btnStop)
